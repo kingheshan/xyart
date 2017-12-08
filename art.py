@@ -95,6 +95,27 @@ def art(artname,number=1,text=""):
     except Exception:
         print("[Error] Return Faild!")
 
+def tprint(text,font=DEFAULT_FONT,chr_ignore=True):
+    '''
+    This function split function by \n then call text2art function
+    :param text: input text
+    :type text:str
+    :param font: input font
+    :type font:str
+    :param chr_ignore: ignore not supported character
+    :type chr_ignore:bool
+    :return: None
+    '''
+    try:
+        split_list=text.split("\n")
+        result=""
+        for item in split_list:
+            if len(item)!=0:
+                result=result+text2art(item,font=font,chr_ignore=chr_ignore)
+        print(result)
+    except Exception:
+        pass
+
 def getascii(text,font=DEFAULT_FONT,chr_ignore=True):
     '''
     This function split function by \n then call text2art function
